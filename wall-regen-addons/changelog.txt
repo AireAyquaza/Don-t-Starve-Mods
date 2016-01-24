@@ -1,0 +1,4 @@
+Wall Health Regen Addons Changelog
+
+Version 1.0.0
+- Comaptible with Don't Starve
