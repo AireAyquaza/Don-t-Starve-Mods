@@ -1,0 +1,10 @@
+**************************************************
+		  Marble Wall
+		by Aire Ayquaza
+**************************************************
+
+Version 1.0.0
+- Adaptation for Don't Starve
+
+Version 1.0.1
+- Now compatible with shipwrecked
