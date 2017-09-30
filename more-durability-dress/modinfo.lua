@@ -1,7 +1,7 @@
 name = "More durability [Dress]"
 description = "Allow you to apply a multiplicator on dress durabilities"
 author = "Aire Ayquaza"
-version = "1.0.6"
+version = "1.0.9"
 
 forumthread = ""
 
@@ -99,6 +99,19 @@ configuration_options =
         }, 
         default = 1,
     },
+	{
+		name = "DOUBLE_UMBRELLA_PERISHTIME",
+		label = "Dumbrella durability multiplicator",
+		options =
+		{
+			{description = "x1 (default)", data = 1},
+            {description = "x2", data = 2},
+			{description = "x3", data = 3},
+			{description = "x4", data = 4},
+			{description = "x5", data = 5}
+		},
+		default = 1,
+	},
 	{
         name = "EYEBRELLA_PERISHTIME",
         label = "Eyebrella durability multiplicator",
@@ -425,20 +438,6 @@ configuration_options =
         default = 1,
     },
 	{
-        name = "SANDCASTLE_PERISHTIME",
-        label = "Sandcastle durability multiplicator",
-        options = 
-        {
-            {description = "x1 (default)", data = 1},
-            {description = "x2", data = 2},
-			{description = "x3", data = 3},
-			{description = "x4", data = 4},
-			{description = "x5", data = 5},
-			{description = "Infinite", data = 10000000}
-        }, 
-        default = 1,
-    },
-	{
         name = "SHARK_HAT_PERISHTIME",
         label = "Sleek Hat durability multiplicator (SW)",
         options = 
@@ -476,5 +475,44 @@ configuration_options =
 			{description = "x5", data = 5}
         }, 
         default = 1,
-    }
+    },
+	{
+		name = "SHARK_HAT_PERISHTIME",
+		label = "Shark Tooth Crown durability multiplicator",
+		options =
+		{
+			{description = "x1 (default)", data = 1},
+            {description = "x2", data = 2},
+			{description = "x3", data = 3},
+			{description = "x4", data = 4},
+			{description = "x5", data = 5}
+		},
+		default = 1
+	},
+	{
+		name = "TARSUIT_PERISHTIME",
+		label = "Tar suit durability multiplicator",
+		options =
+		{
+			{description = "x1 (default)", data = 1},
+            {description = "x2", data = 2},
+			{description = "x3", data = 3},
+			{description = "x4", data = 4},
+			{description = "x5", data = 5}
+		},
+		default = 1
+	},
+	{
+		name = "WOODLEGSHAT_PERISHTIME",
+		label = "Woodlegs Hat durability multiplicator",
+		options =
+		{
+			{description = "x1 (default)", data = 1},
+            {description = "x2", data = 2},
+			{description = "x3", data = 3},
+			{description = "x4", data = 4},
+			{description = "x5", data = 5}
+		},
+		default = 1
+	}
 }

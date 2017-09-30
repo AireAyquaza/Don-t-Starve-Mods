@@ -1,7 +1,7 @@
 name = "More durability [Boats|Sails|Lenterns]"
 description = "Allow you to apply a multiplicator on boats/boats lamps/sails durabilities"
 author = "Aire Ayquaza"
-version = "1.0.4"
+version = "1.0.5"
 
 forumthread = ""
 
@@ -86,6 +86,19 @@ configuration_options =
         }, 
         default = 1,
     },
+	{
+		name = "ENCRUSTEDBOAT_PERISHTIME",
+		label = "Encrusted Boat durability multiplicator",
+		options =
+		{
+			{description = "x1 (default)", data = 1},
+            {description = "x2", data = 2},
+			{description = "x3", data = 3},
+			{description = "x4", data = 4},
+			{description = "x5", data = 5}
+		},
+		default = 1
+	},
 	{
         name = "BOAT_TORCH_LIGHTTIME",
         label = "Boat Torch durability multiplicator",
@@ -189,5 +202,31 @@ configuration_options =
 			{description = "x5", data = 5}
         }, 
         default = 1,
-    }
+    },
+	{
+		name = "BOATCANNON_AMMO_COUNT",
+		label = "Boat cannon ammo count",
+		options =
+		{
+			{description = "15 (default)", data = 15},
+            {description = "20", data = 20},
+			{description = "25", data = 25},
+			{description = "30", data = 30},
+			{description = "35", data = 35}
+		},
+		default = 15
+	},
+	{
+		name = "QUACKERINGRAM_USE_COUNT",
+		label = "Quackering Ram uses",
+		options =
+		{
+			{description = "15 (default)", data = 15},
+            {description = "20", data = 20},
+			{description = "25", data = 25},
+			{description = "30", data = 30},
+			{description = "35", data = 35}
+		},
+		default = 15
+	}
 }

@@ -1,7 +1,7 @@
 name = "More durability [Armour]"
 description = "Allow you to apply a multiplicator on armour durabilities"
 author = "Aire Ayquaza"
-version = "1.0.8"
+version = "1.1.0"
 
 forumthread = ""
 
@@ -26,7 +26,7 @@ configuration_options =
         label = "Grass suit durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -39,7 +39,7 @@ configuration_options =
         label = "Log suit durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -52,7 +52,7 @@ configuration_options =
         label = "Marble suit durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -65,7 +65,7 @@ configuration_options =
         label = "Marble suit speed deacrease",
         options = 
         {
-            {description = "-30% (default)", 0.7},
+            {description = "-30% (default)", data = 0.7},
             {description = "-20%", data = 0.8},
 			{description = "-10%", data = 0.9},
 			{description = "No restriction", data = 1},
@@ -77,7 +77,7 @@ configuration_options =
         label = "Snurtle Shell armour durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -90,7 +90,7 @@ configuration_options =
         label = "Thulecite suit durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -103,7 +103,7 @@ configuration_options =
         label = "Scalemail durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -116,7 +116,7 @@ configuration_options =
         label = "Obsidian suit durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -129,7 +129,7 @@ configuration_options =
         label = "Limstone Suit durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -142,7 +142,7 @@ configuration_options =
         label = "Sea Shell Armor durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -155,7 +155,7 @@ configuration_options =
         label = "Night armour durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -168,7 +168,7 @@ configuration_options =
         label = "Football Helmet durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -181,7 +181,7 @@ configuration_options =
         label = "Thulecite Crown durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -194,7 +194,7 @@ configuration_options =
         label = "Shelmet durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -207,7 +207,7 @@ configuration_options =
         label = "Beekeeper Hat durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
@@ -220,12 +220,38 @@ configuration_options =
         label = "Battle Heml durability multiplicator",
         options = 
         {
-            {description = "x1 (default)", 1},
+            {description = "x1 (default)", data = 1},
             {description = "x2", data = 2},
 			{description = "x3", data = 3},
 			{description = "x4", data = 4},
 			{description = "x5", data = 5}
         }, 
         default = 1,
-    }
+    },
+	{
+		name = "ARMORCACTUS",
+		label = "Cactus suit durability multiplicator",
+		options =
+		{
+			{description = "x1 (default)", data = 1},
+            {description = "x2", data = 2},
+			{description = "x3", data = 3},
+			{description = "x4", data = 4},
+			{description = "x5", data = 5}
+		},
+		default = 1
+	},
+	{
+		name = "ARMOR_OXHAT",
+		label = "Horned helmet durability multiplicator",
+		options =
+		{
+			{description = "x1 (default)", data = 1},
+            {description = "x2", data = 2},
+			{description = "x3", data = 3},
+			{description = "x4", data = 4},
+			{description = "x5", data = 5}
+		},
+		default = 1
+	}
 }

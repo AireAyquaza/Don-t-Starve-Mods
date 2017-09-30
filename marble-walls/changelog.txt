@@ -1,0 +1,20 @@
+**************************************************
+		  Marble Wall
+		by Aire Ayquaza
+**************************************************
+
+Version 1.0.0
+- Adaptation for Don't Starve
+
+Version 1.0.1
+- Now compatible with shipwrecked
+
+Version 1.0.2
+- Fixed amount of wall received whe craft
+
+Version 1.0.3
+- Fixed invisible walls in SW
+- Removed dependency of Wall Health Regen
+- Added Living Marble Walls witch can be activeted in options
+- Added customizable regen value for Living Marble Walls
+- Added undeploy option for Marble Walls like in Wall Health Regen

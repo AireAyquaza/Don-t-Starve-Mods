@@ -1,7 +1,7 @@
 name = "More durability [Misc]"
 description = "Allow you to modify items durabilities"
 author = "Aire Ayquaza"
-version = "1.0.4"
+version = "1.0.8"
 
 forumthread = ""
 
@@ -124,7 +124,7 @@ configuration_options =
         label = "Torch durability",
         options = 
         {
-            {description = "1min 15sec (default)", 1},
+            {description = "1min 15sec (default)", data = 1},
             {description = "2min 30sec", data = 2},
 			{description = "3min 45", data = 3},
 			{description = "5min", data = 4},
@@ -157,7 +157,7 @@ configuration_options =
         label = "Bucket-o-poop uses",
         options = 
         {
-            {description = "10 (default)", 10},
+            {description = "10 (default)", data = 10},
             {description = "20", data = 20},
 			{description = "30", data = 30},
 			{description = "40", data = 40},
@@ -170,7 +170,7 @@ configuration_options =
         label = "Old Bell uses",
         options = 
         {
-            {description = "3 (default)", 3},
+            {description = "3 (default)", data = 3},
             {description = "6", data = 6},
 			{description = "9", data = 9},
 			{description = "12", data = 12},
@@ -183,7 +183,7 @@ configuration_options =
         label = "Luxury Fan uses",
         options = 
         {
-            {description = "15 (default)", 15},
+            {description = "15 (default)", data = 15},
             {description = "30", data = 30},
 			{description = "45", data = 45},
 			{description = "60", data = 60},
@@ -196,7 +196,7 @@ configuration_options =
         label = "Silly Monkey Ball uses",
         options = 
         {
-            {description = "10 (default)", 10},
+            {description = "10 (default)", data = 10},
             {description = "20", data = 20},
 			{description = "30", data = 30},
 			{description = "40", data = 40},
@@ -209,7 +209,7 @@ configuration_options =
         label = "Spyglass uses",
         options = 
         {
-            {description = "5 (default)", 5},
+            {description = "5 (default)", data = 5},
             {description = "10", data = 10},
 			{description = "15", data = 15},
 			{description = "20", data = 20},
@@ -222,12 +222,26 @@ configuration_options =
         label = "Boat repair kit uses",
         options = 
         {
-            {description = "3 (default)", 3},
+            {description = "3 (default)", data = 3},
             {description = "6", data = 6},
 			{description = "9", data = 9},
 			{description = "12", data = 12},
 			{description = "15", data = 15}
         }, 
         default = 3,
+    },
+	{
+        name = "SANDCASTLE_PERISHTIME",
+        label = "Sandcastle durability multiplicator",
+        options = 
+        {
+            {description = "x1 (default)", data = 1},
+            {description = "x2", data = 2},
+			{description = "x3", data = 3},
+			{description = "x4", data = 4},
+			{description = "x5", data = 5},
+			{description = "Infinite", data = 10000000}
+        }, 
+        default = 1,
     }
 }

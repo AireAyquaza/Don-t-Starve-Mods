@@ -1,7 +1,7 @@
 name = "More durability [Weapons|Tools]"
 description = "Allow you to modify weapons and tools durabilities"
 author = "Aire Ayquaza"
-version = "1.0.1"
+version = "1.0.4"
 
 forumthread = ""
 
@@ -18,7 +18,7 @@ reign_of_giants_compatible = true
 shipwrecked_compatible = true
 
 server_filter_tags = {"more durability", "durability", "reign of giants", "shipwrecked", "tools", "weapons"}
-
+--MACHETE_USES
 configuration_options =
 {
     {
@@ -100,7 +100,7 @@ configuration_options =
     },
 	{
         name = "BUGNET_USES",
-        label = "But Net uses",
+        label = "Bug Net uses",
         options = 
         {
             {description = "10 (default)", data = 10},
@@ -136,6 +136,19 @@ configuration_options =
 			{description = "2000", data = 2000}
         }, 
         default = 400,
+    },
+	{
+        name = "MACHETE_USES",
+        label = "Machete uses",
+        options = 
+        {
+            {description = "100 (default)", data = 100},
+            {description = "200", data = 200},
+			{description = "300", data = 300},
+			{description = "400", data = 400},
+			{description = "500", data = 500}
+        }, 
+        default = 100,
     },
 	{
         name = "SPEAR_USES",
@@ -306,4 +319,19 @@ configuration_options =
         }, 
         default = 250,
     },
+	{
+		name = "SPEAR_LAUNCHER_USES",
+		label = "Speargun uses",
+		options =
+		{
+			{description = "8 (default)", data = 8},
+            {description = "12", data = 12},
+			{description = "16", data = 16},
+			{description = "20", data = 20},
+			{description = "24", data = 24},
+			{description = "28", data = 28},
+			{description = "32", data = 32}
+		},
+		default = 8
+	}
 }

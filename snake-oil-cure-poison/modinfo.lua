@@ -1,7 +1,7 @@
 name = "Snake Oil cure poison"
 description = "Allow you to use snake oil as an anti venom. \nSnake oil is a very rare item droped by snakes when killed by player, it's an unlimited item."
 author = "Aire_Ayquaza"
-version = "1.0.3"
+version = "1.0.4"
 
 forumthread = ""
 
@@ -10,7 +10,7 @@ api_version = 6
 all_clients_require_mod = true
 client_only_mod = true
 dst_compatible = false
-dont_starve_compatible = true
+dont_starve_compatible = false
 reign_of_giants_compatible = false
 shipwrecked_compatible = true
 

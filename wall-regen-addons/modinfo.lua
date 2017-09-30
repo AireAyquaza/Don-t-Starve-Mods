@@ -1,7 +1,7 @@
 name = "Wall Health Regen Addons [DS Version]"
-description = "Addons for Wall Health Regen. Compatible with Wall Gates"
+description = "Addons for Wall Health Regen. Compatible with Wall Gates."
 author = "Aire Ayquaza"
-version = "1.0.0"
+version = "1.0.1"
 
 forumthread = ""
 

@@ -1,7 +1,7 @@
 name = "More durability [Amulets|Staffs]"
 description = "Allow you to modify amulets and staffs durabilities"
 author = "Aire Ayquaza"
-version = "1.0.4"
+version = "1.0.5"
 
 forumthread = ""
 
@@ -104,7 +104,7 @@ configuration_options =
         label = "Weather Pain uses",
         options = 
         {
-            {description = "15 (default)", 15},
+            {description = "15 (default)", data = 15},
             {description = "30", data = 30},
 			{description = "45", data = 45},
 			{description = "60", data = 60},
@@ -117,7 +117,7 @@ configuration_options =
         label = "Volcano Staff uses",
         options = 
         {
-            {description = "15 (default)", 15},
+            {description = "15 (default)", data = 15},
             {description = "30", data = 30},
 			{description = "45", data = 45},
 			{description = "60", data = 60},
