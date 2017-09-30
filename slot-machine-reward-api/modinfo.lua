@@ -1,7 +1,7 @@
 name = "Slot Machine Reward API"
 description = "This mod is an API, there is no added content in the game.\nIt allow slot machine to be modded with new rewards.\nSee tutorial on Steam workshop to add your own reward into the slot machine."
 author = "Aire Ayquaza"
-version = "1.0.0"
+version = "1.0.1"
 
 forumthread = ""
 
