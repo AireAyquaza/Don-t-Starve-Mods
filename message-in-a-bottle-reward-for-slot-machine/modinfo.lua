@@ -1,7 +1,7 @@
 name = "Message in a bottle reward for slot machine"
 description = "Dependency needed : Slot Machine Reward API\n\nAdd a reward for slot machine witch gives you two message in a bottle and a golden shovel.\nNow configurable !\nThe message in a bottle can be false (rare), no chest appear when you dug up the x-marks-the-spot.\n\nMessage in a bottle are renewable with this mod!"
 author = "Aire Ayquaza"
-version = "1.0.4"
+version = "1.0.5"
 
 forumthread = ""
 

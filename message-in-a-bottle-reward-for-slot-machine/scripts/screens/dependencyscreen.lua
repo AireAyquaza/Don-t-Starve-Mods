@@ -40,7 +40,7 @@ local DependencyScreen = Class(Screen, function(self, title, str)
 	
 	local buttons = {}
 	table.insert(buttons, {text="Ignore", cb=function() TheFrontEnd:PopScreen(self) end})
-	table.insert(buttons, {text="Visit URL", cb=function() VisitURL("https://steamcommunity.com/sharedfiles/filedetails/?id=") end})
+	table.insert(buttons, {text="Visit URL", cb=function() VisitURL("https://steamcommunity.com/sharedfiles/filedetails/?id=1152634824") end})
 	
 	self.menu = self.proot:AddChild(Menu(buttons, button_w, true))
 	self.menu:SetPosition(-(button_w*(#buttons-1))/2, -65, 0)
