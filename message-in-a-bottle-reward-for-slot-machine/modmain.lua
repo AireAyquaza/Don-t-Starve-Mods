@@ -1,7 +1,7 @@
 local DependencyScreen = GLOBAL.require "screens/dependencyscreen"
 
 -- Check if the dependency is enabled (Slot Machine Reward API)
-if GLOBAL.KnownModIndex:IsModEnabled("slot-machine-reward-api") then
+if GLOBAL.KnownModIndex:IsModEnabled("workshop-1152634824") then
 	
 	-- Creating new loots
 	local addedSlotMachineReward =
