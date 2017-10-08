@@ -1,8 +1,8 @@
 name = "Hounds attack predictor" 
 
-description = "Predict hounds attacks with a displayed timer in a widget.\n\nThe widget is on top left of the screen, there is a timer on the widget indicate how many time left before the next attack.\n\nCompatible with Volcano eruption predictor."
+description = "Predict hounds and cave worms attacks with a displayed timer in a widget.\n\nThe widget is on top left of the screen, there is a timer on the widget indicate how many time left before the next attack.\n\nCompatible with Volcano eruption predictor."
 author = "Aire Ayquaza"
-version = "1.0.1"
+version = "1.0.2"
 
 api_version = 6
 priority = 0

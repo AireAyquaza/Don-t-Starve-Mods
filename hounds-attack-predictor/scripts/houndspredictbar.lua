@@ -43,9 +43,10 @@ return {
 		
 		local entity = CreateEntity()
 		entity:DoPeriodicTask(0.5, function()
-			local hounded = GetWorld().components.hounded
+			local hounded = GetWorld().components.hounded or GetWorld().components.periodicthreat.threats.WORM
+			
 			if hounded ~= nil then
-				local secondsToAttack = hounded.timetoattack
+				local secondsToAttack = hounded.timetoattack or GetWorld().components.periodicthreat.threats.WORM.timer
 				
 				local text = filter("??m ??", "No attack\npredicted!")
 				

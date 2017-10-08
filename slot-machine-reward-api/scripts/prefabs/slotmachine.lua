@@ -282,5 +282,6 @@ local function CreateSlotMachine(name)
 
 end
 
-return CreateSlotMachine()
+return CreateSlotMachine(),
+       MakePlacer("common/slotmachine_placer", "slot_machine", "slot_machine", "idle" )
 

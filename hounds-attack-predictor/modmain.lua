@@ -12,7 +12,9 @@ local config =
 Assets =
 {
 	Asset("ATLAS", "images/houndswidget.xml"),
-	Asset("ATLAS", "images/houndswidgetresized.xml")
+	Asset("ATLAS", "images/houndswidgetresized.xml"),
+	Asset("ATLAS", "images/depthwormswidget.xml"),
+	Asset("ATLAS", "images/depthwormswidgetresized.xml")
 }
 
 local HoundsPredictBar = require "houndspredictbar"

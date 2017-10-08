@@ -14,4 +14,6 @@ local function AddMap(inst)
 	minimap:SetIcon( inst.prefab .. ".tex" )
 end
 
+modimport('src/mushtree_spores.lua')
 modimport('src/mushroom_farm.lua')
+modimport('src/mushtree.lua')

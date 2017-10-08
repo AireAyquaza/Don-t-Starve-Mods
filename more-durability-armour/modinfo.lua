@@ -1,7 +1,7 @@
 name = "More durability [Armour]"
 description = "Allow you to apply a multiplicator on armour durabilities"
 author = "Aire Ayquaza"
-version = "1.1.0"
+version = "1.1.1"
 
 forumthread = ""
 
@@ -65,12 +65,12 @@ configuration_options =
         label = "Marble suit speed deacrease",
         options = 
         {
-            {description = "-30% (default)", data = 0.7},
-            {description = "-20%", data = 0.8},
-			{description = "-10%", data = 0.9},
-			{description = "No restriction", data = 1},
+            {description = "-30% (default)", data = 0},
+            {description = "-20%", data = 0.1},
+			{description = "-10%", data = 0.2},
+			{description = "No restriction", data = 0.3},
         }, 
-        default = 0.7,
+        default = 0,
     },
 	{
         name = "ARMORSNURTLESHELL",

@@ -4,9 +4,9 @@ local STRINGS    = GLOBAL.STRINGS
 local TECH       = GLOBAL.TECH
 
 -- Tuning
-TUNING.MUSHROOMFARM_MAX_HARVESTS = 4
---TUNING.MUSHROOMFARM_FULL_GROW_TIME = TUNING.TOTAL_DAY_TIME * 3.75
-TUNING.MUSHROOMFARM_FULL_GROW_TIME = TUNING.TOTAL_DAY_TIME
+GLOBAL.TUNING.MUSHROOMFARM_FULL_GROW_TIME = TUNING.TOTAL_DAY_TIME * 3.75
+GLOBAL.TUNING.MUSHROOMFARM_MAX_HARVESTS = 4
+GLOBAL.TUNING.MUSHROOMFARM_SPAWN_SPORE_CHANCE = 0.50
 
 -- Strings
 STRINGS.NAMES.MUSHROOM_FARM = "Mushroom Planter"
@@ -119,9 +119,10 @@ table.insert(Assets, Asset("ANIM", "anim/mushroom_farm_green_build.zip"))
 table.insert(Assets, Asset("ANIM", "anim/mushroom_farm_blue_build.zip"))
 table.insert(Assets, Asset("ANIM", "anim/mushroom_farm.zip"))
 
-table.insert(Assets, Asset("ATLAS", "images/inventoryimages/mushroom_farm.xml"))
-
+table.insert(Assets, Asset("IMAGE", "minimap/mushroom_farm.tex"))
+table.insert(Assets, Asset("ATLAS", "minimap/mushroom_farm.xml"))
 table.insert(Assets, Asset("IMAGE", "images/inventoryimages/mushroom_farm.tex"))
+table.insert(Assets, Asset("ATLAS", "images/inventoryimages/mushroom_farm.xml"))
 
 -- Prefabs
 table.insert(PrefabFiles, "mushroom_farm")
@@ -129,10 +130,6 @@ table.insert(PrefabFiles, "mushroom_farm")
 -- Mod init
 local function AddMushroomTag(inst)
 	inst:AddTag("mushroom")
-end
-
-local function AddTradableComponent(inst)
-	inst:AddComponent("tradable")
 end
 
 local mushroomfarm = GLOBAL.Recipe("mushroom_farm", {Ingredient("spoiled_food", 8),Ingredient("poop", 5),Ingredient("livinglog", 2)}, RECIPETABS.FARM, TECH.SCIENCE_ONE, "common", "mushroom_farm_placer", 2.5)
@@ -145,4 +142,4 @@ AddPrefabPostInit("red_cap", AddMushroomTag)
 AddPrefabPostInit("blue_cap", AddMushroomTag)
 AddPrefabPostInit("green_cap", AddMushroomTag)
 
-AddPrefabPostInit("livinglog", AddTradableComponent)
+AddPrefabPostInit("livinglog", function(inst) inst:AddComponent("tradable") end)

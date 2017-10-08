@@ -5,7 +5,9 @@ local Widget = require "widgets/widget"
 Assets =
 {
 	Asset("ATLAS", "images/houndswidget.xml"),
-	Asset("ATLAS", "images/houndswidgetresized.xml")
+	Asset("ATLAS", "images/houndswidgetresized.xml"),
+	Asset("ATLAS", "images/depthwormswidget.xml"),
+	Asset("ATLAS", "images/depthwormswidgetresized.xml")
 }
 
 local HoundsWidget = Class(Widget, function(self, userConfig, width, height, owner)
@@ -20,9 +22,17 @@ local HoundsWidget = Class(Widget, function(self, userConfig, width, height, own
 	
 	self.bgimage = self:AddChild(Image())
     if userConfig.guiSize ~= "default" then
-		self.bgimage:SetTexture("images/houndswidgetresized.xml", "houndswidgetresized.tex")
+		if GetWorld().components.hounded ~= nil then
+			self.bgimage:SetTexture("images/houndswidgetresized.xml", "houndswidgetresized.tex")
+		else
+			self.bgimage:SetTexture("images/depthwormswidgetresized.xml", "depthwormswidgetresized.tex")
+		end
 	else
-		self.bgimage:SetTexture("images/houndswidget.xml", "houndswidget.tex")
+		if GetWorld().components.hounded ~= nil then
+			self.bgimage:SetTexture("images/houndswidget.xml", "houndswidget.tex")
+		else
+			self.bgimage:SetTexture("images/depthwormswidget.xml", "depthwormswidget.tex")
+		end
 	end
     self.bgimage:ScaleToSize(self.width, self.height)
     self.bgimage:SetTint(1.0, 1.0, 1.0, 1.0)

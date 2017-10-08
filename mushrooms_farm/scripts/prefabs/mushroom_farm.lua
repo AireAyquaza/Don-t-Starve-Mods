@@ -6,8 +6,6 @@ local assets =
     Asset("ANIM", "anim/mushroom_farm_red_build.zip"),
     Asset("ANIM", "anim/mushroom_farm_green_build.zip"),
     Asset("ANIM", "anim/mushroom_farm_blue_build.zip"),
-    Asset("ATLAS", "images/inventoryimages/mushroom_farm.xml"),
-    Asset("IMAGES", "images/inventoryimages/mushroom_farm.tex"),
 }
 
 local prefabs =
@@ -16,6 +14,9 @@ local prefabs =
     "green_cap",
     "blue_cap",
     "collapse_small",
+	"spore_tall",
+    "spore_medium",
+    "spore_small",
 }
 
 local levels =
@@ -27,6 +28,13 @@ local levels =
     { amount=0, idle="idle", hit="hit_idle" }
 }
 
+local spore_to_cap = 
+{
+    spore_tall = "blue_cap",
+    spore_medium = "red_cap",
+    spore_small = "green_cap",
+}
+
 local FULLY_REPAIRED_WORKLEFT = 3
 
 local function DoMushroomOverrideSymbol(inst, product)
@@ -35,8 +43,9 @@ end
 
 local function StartGrowing(inst, product)
     if inst.components.harvestable ~= nil then
-        local max_produce = levels[1].amount or levels[2].amount
-        local productname = product.prefab
+		local is_spore = product:HasTag("spore")
+        local max_produce = is_spore and levels[1].amount or levels[2].amount
+        local productname = is_spore and spore_to_cap[product.prefab] or product.prefab
 
         DoMushroomOverrideSymbol(inst, productname)
 
@@ -58,14 +67,14 @@ local function setlevel(inst, level, dotransition)
         inst.anims.idle = level.idle
         inst.anims.hit = level.hit
 
-        if inst.remainingharvests == 0 then
+		if inst.components.harvestable:CanBeHarvested() then
+            inst.components.trader:Disable()
+        elseif inst.remainingharvests == 0 then
             inst.anims.idle = "expired"
             inst.components.trader:Enable()
             inst.components.harvestable:SetGrowTime(nil)
             inst.components.workable:SetWorkLeft(1)
         elseif GetSeasonManager():IsWinter() or GetSeasonManager():IsWetSeason() then
-            inst.components.trader:Disable()
-        elseif inst.components.harvestable:CanBeHarvested() then
             inst.components.trader:Disable()
         else
             inst.components.trader:Enable()
@@ -73,7 +82,6 @@ local function setlevel(inst, level, dotransition)
         end
 
         if dotransition then
-			print(level.grow)
             inst.AnimState:PlayAnimation(level.grow)--crash here
             inst.AnimState:PushAnimation(inst.anims.idle, false)
 			--les sons n'existent pas
@@ -117,6 +125,18 @@ end
 
 local function ongrow(inst, produce)
     updatelevel(inst, true)
+	
+	-- if started with spores, there is a chance it will release one spore when it hits max level.
+    if produce == levels[1].amount then
+        if math.random() <= TUNING.MUSHROOMFARM_SPAWN_SPORE_CHANCE then
+            for k,v in pairs(spore_to_cap) do
+                if v == inst.components.harvestable.product then
+                    inst.components.lootdropper:SpawnLootPrefab(k)  
+                    break
+                end
+            end
+        end
+    end
 end
 
 local function onhammered(inst, worker)
@@ -142,8 +162,7 @@ end
 local function onbuilt(inst)
     inst.AnimState:PlayAnimation("place")
     inst.AnimState:PushAnimation("idle", false)
-	--le son suivant n'existe pas
-    --inst.SoundEmitter:PlaySound("dontstarve/common/together/mushroomfarm/craft")
+	inst.SoundEmitter:PlaySound("dontstarve/common/craftable/rabbit_hutch")
 end
 
 local function getstatus(inst)
@@ -153,7 +172,8 @@ local function getstatus(inst)
 
     return inst.remainingharvests == 0 and "ROTTEN"
 			or (GetSeasonManager():IsWinter() or GetSeasonManager():IsWetSeason()) and "SNOWCOVERED"
-            or inst.components.harvestable.produce == levels[1].amount and "LOTS"
+            or inst.components.harvestable.produce == levels[1].amount and "STUFFED"
+            or inst.components.harvestable.produce == levels[2].amount and "LOTS"
             or inst.components.harvestable:CanBeHarvested() and "SOME"
             or "EMPTY"
 end
@@ -211,10 +231,8 @@ local function accepttest(inst, item)
         if item.prefab == "livinglog" then -- only livinglog for now because that is the recipe
             return true
         end
-		print("MUSHROOMFARM_NEEDSLOG")
         return false, "MUSHROOMFARM_NEEDSLOG"
-    elseif not item:HasTag("mushroom") then
-		print("MUSHROOMFARM_NEEDSSHROOM")
+    elseif not (item:HasTag("mushroom") or item:HasTag("spore")) then
         return false, "MUSHROOMFARM_NEEDSSHROOM"
     end
     return true
@@ -308,15 +326,6 @@ local function fn(Sim)
     inst.components.inspectable.getstatus = getstatus
 	
     inst:AddComponent("lootdropper")
-	--if inst:HasTag("burnt") or (inst.components.burnable ~= nil and inst.components.burnable:IsBurning()) or (not inst.components.harvestable:CanBeHarvested()) then
-    --    return
-    --end
-	
-    local loot = {}
-    for i= 1,inst.components.harvestable.produce do
-        table.insert(loot, inst.components.harvestable.product)
-    end
-    inst.components.lootdropper:SetLoot(loot)
 	
     inst:AddComponent("workable")
     inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
